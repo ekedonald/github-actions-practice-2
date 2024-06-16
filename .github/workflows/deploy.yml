@@ -4,9 +4,9 @@ on:
     branches:
       - main
 env:
-  MONGODB_CLUSTER_ADDRESS: mydb-ikenna.ijsfghp.mongodb.net
-  MONGODB_USERNAME: ekeikenna
-  MONGODB_PASSWORD: dzARCsTpCnnFNHFV
+  MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+  MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+  MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
   MONGODB_DB_NAME: mydb-ikenna
 jobs:
   test:
@@ -36,4 +36,3 @@ jobs:
       - name: Output information
         run: |        
           echo "MONGODB_DB_NAME ${{ env.MONGODB_DB_NAME}}"
-          echo "MONGODB_PASSWORD $MONGODB_PASSWORD"
